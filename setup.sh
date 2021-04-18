@@ -6,4 +6,3 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt update
 apt-cahce policy docker-ce
 sudo apt install -y docker-ce
-sudo systemctl status docker
