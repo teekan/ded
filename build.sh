@@ -1,5 +1,5 @@
 #!/bin/bash
 sudo docker pull mongo
-sudo docker build -t dockerimage .
-sudo docker run --name mongoinstance mongo
-sudo docker run --name dockercontainer dockerimage
+sudo docker build -t goapp .
+sudo docker run --name mongoinst mongo
+sudo docker run --name goappinst goapp
