@@ -26,18 +26,19 @@
     </div>
     <div>
         <div class="row" ng-app="app" ng-controller="crtl">
+		{{datarz}}
             <div class="col s12 m6 l3" ng-repeat="data in datarz">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://materializecss.com/images/office.jpg">
+                      <img class="activator" src="#">
                     </div>
                     <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">{{data.id}}<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">This is a link</a></p>
+                      <span class="card-title activator grey-text text-darken-4">{{data.title}}<i class="material-icons right">more_vert</i></span>
+                      <p><a href="{{data.link}}">GET A LINK</a></p>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">{{data.id}}<i class="material-icons right">close</i></span>
-                      <p>{{data.body}}</p>
+                      <span class="card-title grey-text text-darken-4">{{data.title}}<i class="material-icons right">close</i></span>
+                      <p>{{data.desc}}</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +63,7 @@
     <script>
       var app = angular.module('app', []);
       app.controller('crtl', function($scope, $http) {
-        $http.get("https://jsonplaceholder.typicode.com/posts")
+        $http.get("http://freeporntube.ml/dumy.json")
         .then(function(response) {
           $scope.datarz = response.data;
         });
