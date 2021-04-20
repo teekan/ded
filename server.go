@@ -7,7 +7,7 @@ import (
 
 func main(){
 
-	static := http.FileServer(http.Dir("/go/src/static"))
+	static := http.FileServer(http.Dir("/go/src"))
 	http.HandleFunc("/",static)
 	log.Fatal(http.ListenAndServe(":80",nil))
 
