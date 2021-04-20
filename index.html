@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Free Porn Tube</title>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+        <nav class="nav-extended">
+            <div class="nav-wrapper purple darken-2">
+            <a href="#" class="brand-logo">Free Porn Tube</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Home</a></li>
+            </ul>
+            </div>
+        </nav>
+    </div>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+      </ul>
+    <div class="container">
+        <h5 class="center-align">Most Recent Videos</h5>
+    </div>
+    <div>
+        <div class="row" ng-app="app" ng-controller="crtl">
+            <div class="col s12 m6 l3" ng-repeat="data in datarz">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator" src="https://materializecss.com/images/office.jpg">
+                    </div>
+                    <div class="card-content">
+                      <span class="card-title activator grey-text text-darken-4">{{data.id}}<i class="material-icons right">more_vert</i></span>
+                      <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{data.id}}<i class="material-icons right">close</i></span>
+                      <p>{{data.body}}</p>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
+
+
+    </div>
+
+    <footer class="page-footer light-green accent-2">
+        <div class="footer-copyright light-green accent-3">
+          <div class="container">
+          Free Porn Tube
+          <a class="grey-text text-lighten-4 right" href="/">Home</a>
+          </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+      var app = angular.module('app', []);
+      app.controller('crtl', function($scope, $http) {
+        $http.get("https://jsonplaceholder.typicode.com/posts")
+        .then(function(response) {
+          $scope.datarz = response.data;
+        });
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+          });
+    </script>
+  </body>
+</html>
