@@ -1,4 +1,4 @@
 FROM golang:alpine
-RUN apk add git
-RUN go get github.com/revel/revel
-RUN go get github.com/revel/cmd/revel
+COPY server.go /go/
+RUN go build server.go
+CMD /go/server
